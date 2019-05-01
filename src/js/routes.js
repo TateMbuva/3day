@@ -5,6 +5,8 @@ import FormPage from '../pages/form.jsx';
 import CatalogPage from '../pages/catalog.jsx';
 import ProductPage from '../pages/product.jsx';
 import SettingsPage from '../pages/settings.jsx';
+import SignUp from '../pages/SignUp.jsx' ;
+import SignIn from '../pages/SignIn.jsx'
 
 import DynamicRoutePage from '../pages/dynamic-route.jsx';
 import RequestAndLoad from '../pages/request-and-load.jsx';
@@ -19,6 +21,16 @@ var routes = [
     path: '/about/',
     component: AboutPage,
   },
+  {
+    path:"/SignUp",
+    component:SignUp
+  }
+  ,
+  {
+    path:"/SignIn",
+    component:SignIn
+  }
+  ,
   {
     path: '/form/',
     component: FormPage,
