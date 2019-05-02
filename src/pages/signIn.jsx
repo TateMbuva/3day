@@ -3,6 +3,7 @@ import {
   Page,
   Navbar,
   List,
+  Link,
   ListInput,
   BlockTitle,
   Button,
@@ -14,55 +15,71 @@ import Framework7 from 'framework7';
 export default class extends React.Component{
     constructor(){
         super();
+
+        // Method Binding
+        this.onChangeFunc = this.onChange.bind(this)
+        this.submitFunc = this.submit.bind(this)
+
+        // Component State
         this.state={
             name:'',
             password:""
-
         }
     }
-    onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
-      };
 
-      SubmitIt = e => {
-       /// we gonna  store all this in local storage 🚋
-       localStorage.setItem('name', this.state.name);
-       localStorage.setItem('password',this.state.password)
-
-
-      };
-
+    // Capture value change, onInput event
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+    // Submit input values to App Root
+    submit(e) {
+        console.log(this.state)
+        this.$f7router.navigate('/main/')
+    }
 
     render(){
         return(
-            <Page name="form">
-              <Navbar title="Sign In" backLink="Back"></Navbar>
+            <Page name="signIn" noToolbar={true} style={{
+                marginTop: '25%',
+            }}>
 
-              <BlockTitle>Sign UP</BlockTitle>
+              <BlockTitle>Sign In</BlockTitle>
               <List noHairlinesMd>
+
                 <ListInput
+                  name="name"
                   label="Name"
-                  value={this.state.name}
-                  onChange={this.onChange}
+                  onInput={this.onChangeFunc}
                   type="text"
                   placeholder="Your name"
                 ></ListInput>
 
               <ListInput
+                  name="password"
                   label="Password"
                   type="password"
-                  onChange={this.onChange}
-                  value={this.state.password}
+                  onInput={this.onChangeFunc}
                   placeholder="Password"
                 ></ListInput>
 
-                <Button className="col" onClick={this.SubmitIt} small round outline>Sign Ip</Button>
 
                 </List>
+                <Button onClick={this.submitFunc} style={{
+                    marginLeft: 16,
+                    marginRight: 16,
+                }}fill >Sign In</Button>
+            <div style={{
+                textAlign: 'center',
+                marginTop: 16,
+            }}>
+                <p style={{
+                    color: '#000000a6',
+                    marginBottom: 0,
+                }}>Don't have an account yet?</p>
+                <Link href="/signUp/">Sign up here</Link>
+            </div>
             </Page>
           );
     }
 }
 
-
-//var myapp   = new Framework7();

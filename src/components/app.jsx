@@ -35,6 +35,12 @@ export default class extends React.Component {
         id: 'io.framework7.stanbic', // App bundle ID
         name: 'stanbic-mobile', // App name
         theme: 'auto', // Automatic theme detection
+        //App root methods
+        methods: {
+            alert: ()=> {
+                this.$f7.dialog.alert('Hello World');
+            }
+        },
         // App root data
         data: function () {
           return {
@@ -106,52 +112,23 @@ export default class extends React.Component {
         {/* Status bar overlay for fullscreen mode*/}
         <Statusbar></Statusbar>
 
-
-        {/* Views/Tabs container */}
-        <Views tabs className="safe-areas">
-          {/* Tabbar for switching views-tabs */}
-          <Toolbar tabbar labels bottom>
-            <Link tabLink="#view-home" tabLinkActive iconMd="material:payment" text="Pay" />
-            <Link tabLink="#view-history" iconMd="material:history" text="History" />
-            <Link tabLink="#view-deposit" iconMd="material:receipt" text="Deposit" />
-            <Link tabLink="#view-about"  iconMd="material:info" text="About" />
-          </Toolbar>
-
           {/* Sign In View */}
-          <View id="view-signIn" name="signIn" tab url="/" />
+          <View id="view-signIn" name="signIn" url="/" main/>
 
           {/* Sign Up View */}
-          <View id="view-signIn" name="history" tab url="/signUp/" />
+          <View id="view-signIn" name="history"  url="/signUp/" />
 
-          {/* Your main view/tab, should have "view-main" class. It also has "tabActive" prop */}
-          <View id="view-pay" main tab tabActive url="/pay/" />
-
-          {/* History View */}
-          <View id="view-history" name="history" tab url="/history/" />
-
-           {/* History View */}
-          <View id="view-deposit" name="history" tab url="/deposit/" />
-
-           {/* History View */}
-          <View id="view-about" name="about" tab url="/about/" />
-
-
-        </Views>
-
+          {/* Main View */}
+          <View id="view-main" name="main"  url="/main/" router={false}/>
 
       </App>
     )
   }
-  alertLoginData() {
-    this.$f7.dialog.alert('Username: ' + this.state.username + '<br>Password: ' + this.state.password);
-  }
   componentDidMount() {
     this.$f7ready((f7) => {
-      // Init cordova APIs (see cordova-app.js)
       if (f7.device.cordova) {
         cordovaApp.init(f7);
       }
-      // Call F7 APIs here
     });
   }
 }

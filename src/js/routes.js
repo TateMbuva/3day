@@ -1,5 +1,6 @@
 import SignInPage from '../pages/signIn.jsx';
 import SignUpPage from '../pages/signUp.jsx';
+import MainPage from '../pages/main.jsx';
 import PayPage from '../pages/pay.jsx';
 import HistoryPage from '../pages/history.jsx';
 import AboutPage from '../pages/about.jsx';
@@ -15,6 +16,10 @@ var routes = [
   {
     path: '/signUp/',
     component: SignUpPage,
+  },
+  {
+    path: '/main/',
+    component: MainPage,
   },
   {
     path: '/pay/',
