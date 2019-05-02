@@ -27,7 +27,7 @@ export default class extends React.Component {
   }
   render() {
     return (
-      <Page name="about">
+      <Page name="deposit">
         <Navbar>
           <NavLeft>
             <Icon
@@ -59,7 +59,7 @@ export default class extends React.Component {
             />
             <span
               style={{
-                fontSize: 12,
+                fontSize: 24,
                 fontWeight: "500",
                 marginRight: 16,
                 color: "#007aff"
@@ -81,41 +81,63 @@ export default class extends React.Component {
         >
           <BlockTitle
             style={{
-              margin: "0 auto",
-              textAlign: "center"
+              marginLeft: "5%",
+              marginRight: 0,
+              marginTop: 0,
+              marginBottom: 0,
+              textAlign: "left"
             }}
           >
-            About Us
+            Deposit Infomation
           </BlockTitle>
         </Block>
-        <Card className="demo-card-header-pic">
-          <CardHeader
-            className="no-border"
-            valign="bottom"
-            style={{
-              height: 200,
-              color: "#fff",
-              backgroundImage:
-                "url(https://images.pexels.com/photos/533405/pexels-photo-533405.jpeg?cs=srgb&dl=about-us-businessman-card-533405.jpg&fm=jpg?dl&fit=crop&crop=entropy&w=640&h=213)"
-            }}
-          >
-          </CardHeader>
-          <CardContent>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Asperiores eos iste corporis quo, voluptatem ex sit animi ut
-              nobis illo laudantium autem, porro quibusdam. Fugiat excepturi
-              omnis suscipit quod pariatur.
-            </p>
-          </CardContent>
-        </Card>
-        <Card
-          outline
-          content="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Asperiores eos iste corporis quo, voluptatem ex sit animi ut
-              nobis illo laudantium autem, porro quibusdam. Fugiat excepturi
-              omnis suscipit quod pariatur."
-        />
+        <List
+          noHairlinesMd
+          style={{
+            marginTop: 10,
+          }}
+        >
+          <ListInput
+            style={{ width: "90%", margin: "0 auto" }}
+            label="Account Name"
+            type="text"
+            placeholder="Acc Name"
+          />
+
+          <ListInput
+            style={{ width: "90%", margin: "0 auto" }}
+            label="Account Number"
+            type="text"
+            placeholder="Acc Number"
+          />
+
+          <ListInput
+            style={{ width: "90%", margin: "0 auto" }}
+            label="Amount"
+            type="number"
+            placeholder="Amount"
+          />
+
+          <ListInput
+            style={{ width: "90%", margin: "0 auto" }}
+            type="textarea"
+            label="Comment"
+            placeholder="Comment"
+            resizable
+          />
+        </List>
+
+        <Block strong>
+          <Row tag="p">
+            <Button
+              className="col"
+              style={{ width: "80%", margin: "0 auto" }}
+              fill
+            >
+              Deposit
+            </Button>
+          </Row>
+        </Block>
       </Page>
     );
   }

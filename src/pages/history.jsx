@@ -1,33 +1,28 @@
 import React from 'react';
-import {
-    Page,
+import { Page,
     Navbar,
     NavLeft,
     NavRight,
     Icon,
-    BlockTitle,
-    Block,
-    Card,
-    CardContent,
-    CardHeader,
-    Link,
     List,
-    ListInput,
-    Button
-} from 'framework7-react';
+    ListItem,
+    Block,
+    BlockTitle
+    } from 'framework7-react';
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-        user: this.$f7.data.user,
-    };
-
+      products: this.$f7.data.products,
+      payments: this.$f7.data.payments,
+      user: this.$f7.data.user,
+    }
   }
   render() {
     return (
-      <Page name="pay">
+      <Page name="history">
           <Navbar>
               <NavLeft>
                   <Icon style={{
@@ -54,32 +49,20 @@ export default class extends React.Component {
                     color: '#007aff',
                   }}>${this.state.user.balance}</span>
               </NavRight>
-          </Navbar>
-        <BlockTitle>New Payment</BlockTitle>
-        <List noHairlinesMd>
-          <ListInput
-            label="To"
-            type="text"
-            placeholder="Recipient's name/code"
-          ></ListInput>
-
-          <ListInput
-            label="Amount"
-            type="number"
-            placeholder="$0.00"
-          ></ListInput>
-
-          <ListInput
-            label="Comment"
-            type="textarea"
-            placeholder="Comment on payment..."
-          ></ListInput>
-      </List>
-      <Button style={{
-        marginLeft: 16,
-        marginRight: 16,
-      }}
-      fill>Pay</Button>
+                   </Navbar>
+        <BlockTitle>Payment History</BlockTitle>
+            <List mediaList noChevron >
+                {this.state.payments.map((payment) => (
+                  <ListItem
+                    link="#"
+                    key={Math.random()}
+                    title={payment.to}
+                    after={payment.datetime}
+                    subtitle={payment.subtitle}
+                    text={payment.comment}
+                  ></ListItem>
+                 ))}
+            </List>
       </Page>
     );
   }
