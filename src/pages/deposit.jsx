@@ -1,29 +1,33 @@
 import React from 'react';
-import { Page,
+import {
+    Page,
     Navbar,
     NavLeft,
     NavRight,
     Icon,
-    List,
-    ListItem,
+    BlockTitle,
     Block,
-    BlockTitle
-    } from 'framework7-react';
+    Card,
+    CardContent,
+    CardHeader,
+    Link,
+    List,
+    ListInput,
+    Button
+} from 'framework7-react';
 
 export default class extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      products: this.$f7.data.products,
-      payments: this.$f7.data.payments,
       user: this.$f7.data.user,
     }
   }
   render() {
     return (
-      <Page name="history">
-          <Navbar>
+      <Page name="deposit">
+        <Navbar>
               <NavLeft>
                   <Icon style={{
                     marginLeft: 16,
@@ -49,20 +53,8 @@ export default class extends React.Component {
                     color: '#007aff',
                   }}>${this.state.user.balance}</span>
               </NavRight>
-                   </Navbar>
-        <BlockTitle>Payment History</BlockTitle>
-            <List mediaList noChevron >
-                {this.state.payments.map((payment) => (
-                  <ListItem
-                    link="#"
-                    key={Math.random()}
-                    title={payment.to}
-                    after={payment.datetime}
-                    subtitle={payment.subtitle}
-                    text={payment.comment}
-                  ></ListItem>
-                 ))}
-            </List>
+          </Navbar>
+        
       </Page>
     );
   }

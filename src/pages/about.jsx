@@ -1,18 +1,61 @@
 import React from 'react';
-import { Page, Navbar, Block, BlockTitle } from 'framework7-react';
+import {
+    Page,
+    Navbar,
+    NavLeft,
+    NavRight,
+    Icon,
+    BlockTitle,
+    Block,
+    Card,
+    CardContent,
+    CardHeader,
+    Link,
+    List,
+    ListInput,
+    Button
+} from 'framework7-react';
 
-export default () => (
-  <Page>
-    <Navbar title="About" backLink="Back" />
-    <BlockTitle>About My App</BlockTitle>
-    <Block strong>
-      <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-      <p>Laudantium neque magnam vitae nemo quam commodi, in cum dolore obcaecati laborum, excepturi harum, optio qui, consequuntur? Obcaecati dolor sequi nesciunt culpa quia perspiciatis, reiciendis ex debitis, ut tenetur alias.</p>
-    </Block>
-    <Block strong>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni molestiae laudantium dignissimos est nobis delectus nemo ea alias voluptatum architecto, amet similique, saepe iste consectetur in repellat ut minus quibusdam!</p>
-      <p>Molestias et distinctio porro nesciunt ratione similique, magni doloribus, rerum nobis, aliquam quae reiciendis quasi modi. Nam a recusandae, fugiat in ea voluptates fuga eius, velit corrupti reprehenderit dignissimos consequatur!</p>
-      <p>Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto doloribus a at! Ea molestiae ullam delectus!</p>
-    </Block>
-  </Page>
-);
+export default class extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      user: this.$f7.data.user,
+    }
+  }
+  render() {
+    return (
+      <Page name="about">
+        <Navbar>
+              <NavLeft>
+                  <Icon style={{
+                    marginLeft: 16,
+                    fontSize: 22,
+                    color: '#0000008a',
+                  }} material="account_box"></Icon>
+                  <span style={{
+                    fontSize: 14,
+                    marginLeft: 2,
+                    color: '#0000008a',
+                  }}>{this.state.user.firstName + " " + this.state.user.lastName}</span>
+              </NavLeft>
+              <NavRight>
+                  <Icon style={{
+                    marginRight: 2,
+                    fontSize: 20,
+                    color: '#007aff',
+                  }} material="account_balance_wallet"></Icon>
+                  <span style={{
+                    fontSize: 12,
+                    fontWeight: '500',
+                    marginRight: 16,
+                    color: '#007aff',
+                  }}>${this.state.user.balance}</span>
+              </NavRight>
+          </Navbar>
+        
+      </Page>
+    );
+  }
+}
