@@ -76,7 +76,7 @@ export default class extends React.Component {
                     subtitle: '$235.00 successfully paid',
                 },
             ],
-           
+
           };
         },
 
@@ -106,7 +106,7 @@ export default class extends React.Component {
         {/* Status bar overlay for fullscreen mode*/}
         <Statusbar></Statusbar>
 
-       
+
         {/* Views/Tabs container */}
         <Views tabs className="safe-areas">
           {/* Tabbar for switching views-tabs */}
@@ -117,8 +117,14 @@ export default class extends React.Component {
             <Link tabLink="#view-about"  iconMd="material:info" text="About" />
           </Toolbar>
 
+          {/* Sign In View */}
+          <View id="view-signIn" name="signIn" tab url="/" />
+
+          {/* Sign Up View */}
+          <View id="view-signIn" name="history" tab url="/signUp/" />
+
           {/* Your main view/tab, should have "view-main" class. It also has "tabActive" prop */}
-          <View id="view-home" main tab tabActive url="/" />
+          <View id="view-pay" main tab tabActive url="/pay/" />
 
           {/* History View */}
           <View id="view-history" name="history" tab url="/history/" />
@@ -128,7 +134,7 @@ export default class extends React.Component {
 
            {/* History View */}
           <View id="view-about" name="about" tab url="/about/" />
-          
+
 
         </Views>
 

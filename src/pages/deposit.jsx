@@ -59,7 +59,7 @@ export default class extends React.Component {
             />
             <span
               style={{
-                fontSize: 24,
+                fontSize: 12,
                 fontWeight: "500",
                 marginRight: 16,
                 color: "#007aff"
@@ -69,75 +69,44 @@ export default class extends React.Component {
             </span>
           </NavRight>
         </Navbar>
-        <Block
-          strong
-          style={{
-            marginLeft: 0,
-            marginRight: 0,
-            marginTop: 15,
-            marginBottom: 15,
-            textAlign: "left"
-          }}
-        >
-          <BlockTitle
-            style={{
-              marginLeft: "5%",
-              marginRight: 0,
-              marginTop: 0,
-              marginBottom: 0,
-              textAlign: "left"
-            }}
-          >
+          <BlockTitle>
             Deposit Infomation
           </BlockTitle>
-        </Block>
-        <List
-          noHairlinesMd
-          style={{
-            marginTop: 10,
-          }}
-        >
+        <List noHairlinesMd >
           <ListInput
-            style={{ width: "90%", margin: "0 auto" }}
-            label="Account Name"
+            label="Account"
             type="text"
-            placeholder="Acc Name"
+            placeholder="Account Name"
           />
 
           <ListInput
-            style={{ width: "90%", margin: "0 auto" }}
             label="Account Number"
             type="text"
-            placeholder="Acc Number"
+            placeholder="Account Number"
           />
 
           <ListInput
-            style={{ width: "90%", margin: "0 auto" }}
             label="Amount"
             type="number"
-            placeholder="Amount"
+            placeholder="$0.00"
           />
 
           <ListInput
-            style={{ width: "90%", margin: "0 auto" }}
             type="textarea"
             label="Comment"
             placeholder="Comment"
-            resizable
           />
         </List>
 
-        <Block strong>
-          <Row tag="p">
             <Button
-              className="col"
-              style={{ width: "80%", margin: "0 auto" }}
+                style={{
+                    marginLeft: 16,
+                    marginRight: 16,
+                }}
               fill
             >
               Deposit
             </Button>
-          </Row>
-        </Block>
       </Page>
     );
   }

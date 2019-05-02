@@ -69,25 +69,9 @@ export default class extends React.Component {
             </span>
           </NavRight>
         </Navbar>
-        <Block
-          strong
-          style={{
-            marginLeft: 0,
-            marginRight: 0,
-            marginTop: 15,
-            marginBottom: 15,
-            textAlign: "left"
-          }}
-        >
-          <BlockTitle
-            style={{
-              margin: "0 auto",
-              textAlign: "center"
-            }}
-          >
+          <BlockTitle>
             About Us
           </BlockTitle>
-        </Block>
         <Card className="demo-card-header-pic">
           <CardHeader
             className="no-border"

@@ -1,3 +1,5 @@
+import SignInPage from '../pages/signIn.jsx';
+import SignUpPage from '../pages/signUp.jsx';
 import PayPage from '../pages/pay.jsx';
 import HistoryPage from '../pages/history.jsx';
 import AboutPage from '../pages/about.jsx';
@@ -8,6 +10,14 @@ import NotFoundPage from '../pages/404.jsx';
 var routes = [
   {
     path: '/',
+    component: SignInPage,
+  },
+  {
+    path: '/signUp/',
+    component: SignUpPage,
+  },
+  {
+    path: '/pay/',
     component: PayPage,
   },
   {
