@@ -39,9 +39,43 @@ export default class extends React.Component {
         data: function () {
           return {
             user: {
-              firstName: 'John',
-              lastName: 'Doe',
+              firstName: 'Tate',
+              lastName: 'Mbuva',
+              balance: '243.50',
             },
+            // Payment History
+            payments: [
+                {
+                    to: 'Trevor Munyanyi (EazyElectronics)',
+                    datetime: '11 April, 15:35',
+                    comment: 'Bluetooth speaker purchase, JBL-Zf290k...',
+                    subtitle: '$89.99 successfully paid',
+                },
+                {
+                    to: 'Chinken Inn (Avondale)',
+                    datetime: '1 April, 13:15',
+                    comment: 'Lunch...',
+                    subtitle: '$25.00 successfully paid',
+                },
+                {
+                    to: 'Shingirirai Bishi',
+                    datetime: '27 March, 08:00',
+                    comment: 'Debt repayment...',
+                    subtitle: '$12.00 successfully paid',
+                },
+                {
+                    to: 'OK Supermarket (Marimba)',
+                    datetime: '23 March, 12.48',
+                    comment: '...',
+                    subtitle: '$50.00 successfully paid',
+                },
+                {
+                    to: 'Mrs. J. Mbeva (RotoRealEstate)',
+                    datetime: '1 March, 09:00',
+                    comment: 'Rent payment...',
+                    subtitle: '$235.00 successfully paid',
+                },
+            ],
             // Demo products for Catalog section
             products: [
               {
@@ -118,7 +152,7 @@ export default class extends React.Component {
           {/* Tabbar for switching views-tabs */}
           <Toolbar tabbar labels bottom>
             <Link tabLink="#view-home" tabLinkActive iconMd="material:payment" text="Pay" />
-            <Link tabLink="#view-catalog" iconMd="material:history" text="History" />
+            <Link tabLink="#view-history" iconMd="material:history" text="History" />
             <Link tabLink="#view-settings" iconMd="material:receipt" text="Deposit" />
             <Link tabLink="#view-settings"  iconMd="material:info" text="About" />
           </Toolbar>
@@ -129,6 +163,8 @@ export default class extends React.Component {
           {/* Catalog View */}
           <View id="view-catalog" name="catalog" tab url="/catalog/" />
 
+          {/* History View */}
+          <View id="view-history" name="history" tab url="/history/" />
           {/* Settings View */}
           <View id="view-settings" name="settings" tab url="/settings/" />
 

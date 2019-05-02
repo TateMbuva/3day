@@ -1,6 +1,7 @@
 
 import HomePage from '../pages/home.jsx';
 import PayPage from '../pages/pay.jsx';
+import HistoryPage from '../pages/history.jsx';
 import AboutPage from '../pages/about.jsx';
 import FormPage from '../pages/form.jsx';
 import CatalogPage from '../pages/catalog.jsx';
@@ -19,6 +20,10 @@ var routes = [
   {
     path: '/about/',
     component: AboutPage,
+  },
+  {
+    path: '/history/',
+    component: HistoryPage,
   },
   {
     path: '/form/',
