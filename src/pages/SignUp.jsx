@@ -28,6 +28,11 @@ export default class extends React.Component{
 
       SubmitIt = e => {
        /// we gonna  store all this in local storage 🚋
+       localStorage.setItem('name', this.state.name);
+       localStorage.setItem('password',this.state.password)
+       localStorage.setItem('AccountNumber', this.state.AccountNumber)
+       localStorage.setItem('phoneNumber' ,this.state.phoneNumber) 
+       localStorage.setItem('customerNumber' ,this.state.CustomerNumber)
 
        
       };
