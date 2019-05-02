@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Page,
   Navbar,
@@ -11,163 +11,52 @@ import {
   Button,
   Range,
   Block
-} from 'framework7-react';
+} from "framework7-react";
 
 export default () => (
   <Page name="settings">
-    <Navbar title="Settings" />
+    <Navbar title="Deposit" />
 
-    <BlockTitle>Form Example</BlockTitle>
+    <BlockTitle style={{ textAlign:"center", fontSize: 20, }}>
+      Deposit Form
+    </BlockTitle>
     <List noHairlinesMd>
       <ListInput
-        label="Name"
+        style={{ width: "90%", margin: "0 auto",}}
+        label="Account Name"
         type="text"
-        placeholder="Your name"
-      ></ListInput>
+        placeholder="Acc Name"
+      />
 
       <ListInput
-        label="E-mail"
-        type="email"
-        placeholder="E-mail"
-      ></ListInput>
+        style={{ width: "90%", margin: "0 auto",}}
+        label="Account Number"
+        type="text"
+        placeholder="Acc Number"
+      />
 
       <ListInput
-        label="URL"
-        type="url"
-        placeholder="URL"
-      ></ListInput>
+        style={{ width: "90%", margin: "0 auto",}}
+        label="Amount"
+        type="number"
+        placeholder="Amount"
+      />
 
       <ListInput
-        label="Password"
-        type="password"
-        placeholder="Password"
-      ></ListInput>
-
-      <ListInput
-        label="Phone"
-        type="tel"
-        placeholder="Phone"
-      ></ListInput>
-
-      <ListInput
-        label="Gender"
-        type="select"
-        >
-        <option>Male</option>
-        <option>Female</option>
-      </ListInput>
-
-      <ListInput
-        label="Birth date"
-        type="date"
-        placeholder="Birth day"
-        defaultValue="2014-04-30"
-      ></ListInput>
-
-      <ListItem
-        title="Toggle"
-      >
-        <Toggle slot="after" />
-      </ListItem>
-
-      <ListInput
-        label="Range"
-        input={false}
-      >
-        <Range slot="input" value={50} min={0} max={100} step={1} />
-      </ListInput>
-
-      <ListInput
+        style={{ width: "90%", margin: "0 auto",}}
         type="textarea"
-        label="Textarea"
-        placeholder="Bio"
-      ></ListInput>
-      <ListInput
-        type="textarea"
-        label="Resizable"
-        placeholder="Bio"
+        label="Comment"
+        placeholder="Comment"
         resizable
-      ></ListInput>
+      />
     </List>
 
-    <BlockTitle>Buttons</BlockTitle>
     <Block strong>
       <Row tag="p">
-        <Button className="col">Button</Button>
-        <Button className="col" fill>Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" raised>Raised</Button>
-        <Button className="col" raised fill>Raised Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" round>Round</Button>
-        <Button className="col" round fill>Round Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" outline>Outline</Button>
-        <Button className="col" round outline>Outline Round</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" small outline>Small</Button>
-        <Button className="col" small round outline>Small Round</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" small fill>Small</Button>
-        <Button className="col" small round fill>Small Round</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" large raised>Large</Button>
-        <Button className="col" large fill raised>Large Fill</Button>
-      </Row>
-      <Row tag="p">
-        <Button className="col" large fill raised color="red">Large Red</Button>
-        <Button className="col" large fill raised color="green">Large Green</Button>
+        <Button className="col" style={{ width: "70%", margin: "0 auto" }} fill>
+          Deposit
+        </Button>
       </Row>
     </Block>
-
-    <BlockTitle>Checkbox group</BlockTitle>
-    <List>
-      <ListItem
-        checkbox
-        name="my-checkbox"
-        value="Books"
-        title="Books"
-      ></ListItem>
-      <ListItem
-        checkbox
-        name="my-checkbox"
-        value="Movies"
-        title="Movies"
-      ></ListItem>
-      <ListItem
-        checkbox
-        name="my-checkbox"
-        value="Food"
-        title="Food"
-      ></ListItem>
-    </List>
-
-    <BlockTitle>Radio buttons group</BlockTitle>
-    <List>
-      <ListItem
-        radio
-        name="radio"
-        value="Books"
-        title="Books"
-      ></ListItem>
-      <ListItem
-        radio
-        name="radio"
-        value="Movies"
-        title="Movies"
-      ></ListItem>
-      <ListItem
-        radio
-        name="radio"
-        value="Food"
-        title="Food"
-      ></ListItem>
-    </List>
   </Page>
 );
