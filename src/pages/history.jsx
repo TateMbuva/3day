@@ -47,7 +47,7 @@ export default class extends React.Component {
                     fontWeight: '500',
                     marginRight: 16,
                     color: '#007aff',
-                  }}>{this.state.user.balance}</span>
+                  }}>${this.state.user.balance}</span>
               </NavRight>
                    </Navbar>
         <BlockTitle>Payment History</BlockTitle>
